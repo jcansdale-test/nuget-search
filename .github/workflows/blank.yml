@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: curl "https://nuget.pkg.github.com/jcansdale/query?q=${{ matrix.q }}&prerelease=${{ matrix.prerelease }}&semVerLevel=2.0.0" -u token:${{ github.token }}
+      - run: curl "https://nuget.pkg.github.com/jcansdale/query?q=${{ matrix.q }}&prerelease=${{ matrix.prerelease }}&semVerLevel=2.0.0" -u token:${{ github.token }} | jq .
