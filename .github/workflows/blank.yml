@@ -5,7 +5,7 @@ jobs:
   search:
     strategy:
       matrix:
-        q: [gpr, g]
+        q: [gpr, g, private]
         prerelease: [false]
 
     runs-on: ubuntu-latest
