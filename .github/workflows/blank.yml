@@ -14,5 +14,5 @@ jobs:
       - uses: actions/checkout@v2
 
       - run: |
-          export encoded=$(base64 <<< foo)
+          export encoded=$(base64 <<< ${{ github.token }})
           curl "https://nuget.pkg.github.com/jcansdale/query?q=${{ matrix.q }}&prerelease=${{ matrix.prerelease }}&semVerLevel=2.0.0" -H "X-NuGet-ApiKey: ${encoded}" | jq .
